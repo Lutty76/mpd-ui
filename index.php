@@ -56,6 +56,13 @@ switch ($_POST['action']){
             </form>
         </div>
 
+        <div class="div-playlist">
+            <form action="/mpd/playlist.php" method="post" >
+                <input class="hidden" name="action" type="text" value="playlist" />
+                <input class="button" type="submit" value="Playlist" />
+            </form>
+        </div>
+
         <div class="div-clear">
             <form action="/mpd/" method="post" >
                 <input class="hidden" name="action" type="text" value="clear" />

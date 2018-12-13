@@ -1,15 +1,8 @@
 <?php
 
-if ($_POST['action']!= 'album'){
 
-    
-       exec('mpc findadd album '.$_POST['action'] , $out , $ret);  
-                exec('mpc play' , $out , $ret);
+ exec ('mpc -f %album%  search track 10 |sort -u', $album,$code);
 
-}
-
- system ('mpc -f %album%  search track 10 |sort -u',$artist);
-$artist=['avatar','disturbed'];
 
 ?>
 <!doctype html>
@@ -18,9 +11,9 @@ $artist=['avatar','disturbed'];
   <meta charset="utf-8">
   <title>Lutty Player</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
 </head>
 <body>
+<a id="top"></a>
 <div class="div-link">
         <div class="div-artist">
             <form action="/mpd/artist.php" method="post" >
@@ -41,10 +34,10 @@ $artist=['avatar','disturbed'];
 <div class="list-artist">
 
 <?php
-foreach ($artist as $one){
+foreach ($album as $one){
 echo '
 <div class="button-artist">
-    <form action="/mpd/" method="post" >
+    <form action="/mpd/album.php" method="post" >
         <input class="hidden" name="action" type="text" value="'.$one.'" />
         <input class="button" type="submit" value="'.$one.'" />
     </form>
@@ -58,6 +51,22 @@ echo '
 ?>
 
 </div>
+
+<?php
+if ($_POST['action']!= 'album'){
+
+    
+       exec('mpc findadd album \''.$_POST['action'].'\'' , $out , $ret);  
+                exec('mpc play' , $out , $ret);
+
+
+echo "Added !";
+}
+
+
+
+?>
+<a class="top" href="#top">/\</a>
 </body>
 </html>
 
