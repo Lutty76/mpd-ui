@@ -1,0 +1,45 @@
+html{
+	background-color: black;
+	color: #2299BB;
+	font-family: Helvetica;
+	font-weight: bold; 
+    font-size: 22px;
+    width: 100%; 
+transform: rotate(180deg);
+}
+.title{
+width : 73%;
+     display: inline-block;  
+}
+.time{
+width : 24%;
+    margin: auto;
+     display: inline-block;  
+    text-align:right;
+vertical-align: top;
+}
+.div-button{
+
+     display: inline-block;  
+margin: 25px 35px;
+}
+.button{
+    background: #222;
+    border: none;
+	color: #2299BB;
+    font-size: 40px;
+margin-top:0px;
+margin-bottom:0px;
+}
+.div-genre{
+
+     display: inline-block;  
+margin:1px;
+}
+.control{
+display: block;
+
+}
+.hidden{
+    display:none;
+}
