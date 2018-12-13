@@ -30,6 +30,9 @@ switch ($_POST['action']){
                 exec('mpc ls |mpc add' , $out , $ret);   
                 exec('mpc play' , $out , $ret);
                     break;
+
+    case "clear": exec('mpc clear' , $out , $ret);  
+                    break;
     default: break;
 
 }
@@ -45,6 +48,29 @@ switch ($_POST['action']){
   <script src="script.js"></script>
 </head>
 <body>
+<div class="div-link">
+        <div class="div-artist">
+            <form action="/mpd/artist.php" method="post" >
+                <input class="hidden" name="action" type="text" value="artist" />
+                <input class="button" type="submit" value="Artist" />
+            </form>
+        </div>
+
+        <div class="div-clear">
+            <form action="/mpd/" method="post" >
+                <input class="hidden" name="action" type="text" value="clear" />
+                <input class="button" type="submit" value="Clear" />
+            </form>
+        </div>
+
+        <div class="div-album">
+            <form action="/mpd/album.php" method="post" >
+                <input class="hidden" name="action" type="text" value="album" />
+                <input class="button" type="submit" value="Album" />
+            </form>
+        </div>
+
+</div>
     <div class="title">
         <?php system ( "mpc current  -f '%artist% <br /> %title%'" );  ?>
     </div>

@@ -5,7 +5,7 @@ html{
 	font-weight: bold; 
     font-size: 22px;
     width: 100%; 
-transform: rotate(180deg);
+transform: rotate(0deg);
 }
 .title{
 width : 73%;
@@ -23,6 +23,15 @@ vertical-align: top;
      display: inline-block;  
 margin: 25px 35px;
 }
+.div-artist, .div-album, .div-clear{
+
+     display: inline-block;  
+margin: 25px 25px;
+}
+.div-link .button{
+    
+    font-size: 30px;
+}
 .button{
     background: #222;
     border: none;
@@ -30,6 +39,12 @@ margin: 25px 35px;
     font-size: 40px;
 margin-top:0px;
 margin-bottom:0px;
+}
+.button-artist .button{
+    margin: 5px;
+    font-size: 30px;
+    width: 160px;
+    overflow: hidden;
 }
 .div-genre{
 
