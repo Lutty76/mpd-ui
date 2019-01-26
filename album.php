@@ -1,7 +1,17 @@
 <?php
 
 
+if (isset($_POST['artist'])){
+
+ exec ('mpc -f %album%  search track 10 artist '.$_POST['artist'].' |sort -u', $album,$code);
+ 
+}
+else{
+
+
  exec ('mpc -f %album%  search track 10 |sort -u', $album,$code);
+}
+    
 
 
 ?>
@@ -34,6 +44,18 @@
 <div class="list-artist">
 
 <?php
+
+if (isset($_POST['artist'])){
+echo'
+<div class="button-artist">
+    <form action="/mpd/artist.php" method="post" >
+        <input class="hidden" name="action" type="text" value="'.$_POST['artist'].'" />
+        <input class="button" type="submit" value="Tous" />
+    </form>
+</div>
+';
+
+}
 foreach ($album as $one){
 echo '
 <div class="button-artist">
@@ -53,7 +75,7 @@ echo '
 </div>
 
 <?php
-if ($_POST['action']!= 'album'){
+if (isset($_POST['action']) && $_POST['action']!= 'album'){
 
     
        exec('mpc findadd album \''.$_POST['action'].'\'' , $out , $ret);  

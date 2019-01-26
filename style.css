@@ -1,15 +1,16 @@
 html{
 	background-color: black;
-	color: #2299BB;
+	color: #BB2222;
 	font-family: Helvetica;
 	font-weight: bold; 
     font-size: 22px;
     width: 100%; 
-transform: rotate(180deg);
 }
 .title{
 width : 73%;
      display: inline-block;  
+     overflow: hidden;
+     height: 52px;
 }
 .time{
 width : 24%;
@@ -21,12 +22,19 @@ vertical-align: top;
 .div-button{
 
      display: inline-block;  
-margin: 25px 35px;
+margin: 25px 15px;
+}
+.active{
+    
+    color: #444 !important;
 }
 .div-artist, .div-album, .div-clear, .div-playlist{
 
      display: inline-block;  
 margin: 25px 8px;
+}
+.div-link {
+        margin-top:-8px;
 }
 .div-link .button{
     
@@ -35,7 +43,7 @@ margin: 25px 8px;
 .button, .top{
     background: #222;
     border: none;
-	color: #2299BB;
+	color: #BB2222;
     font-size: 35px;
 margin-top:0px;
 margin-bottom:0px;
@@ -44,7 +52,7 @@ margin-bottom:0px;
     text-decoration: none;
     font-size: 20px;
     float: right;
-	color: #2299BB;
+	color: #BB2222;
     padding: 10px;
 }
 .button-artist {
@@ -64,7 +72,7 @@ margin-bottom:0px;
 .div-genre{
 
      display: inline-block;  
-margin:1px;
+margin:5px;
 }
 .control{
 display: block;
@@ -72,4 +80,13 @@ display: block;
 }
 .hidden{
     display:none;
+}
+.fullbar_time{
+    margin-top: 10px;
+    border: 1px  solid  #BB2222;
+}
+
+.bar_time{
+    background:  #BB2222;
+    height:10px;
 }

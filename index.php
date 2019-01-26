@@ -5,6 +5,8 @@ switch ($_POST['action']){
     case "play":    exec ( 'mpc toggle' , $out, $ret); break;
     case "next":    exec ( 'mpc next' , $out , $ret);break;
     case "previous": exec ( 'mpc prev' , $out , $ret);break;
+    case "repeat":    exec ( 'mpc consume' , $out , $ret);break;
+    case "shuffle": exec ( 'mpc random' , $out , $ret);break;
     case "metal":   exec('mpc clear' , $out , $ret);
                     exec('mpc findadd genre Metal' , $out , $ret);
                     exec('mpc findadd genre \'Hard Rock\'' , $out , $ret)  ;
@@ -36,7 +38,17 @@ switch ($_POST['action']){
     default: break;
 
 }
+exec('mpc |grep -oE "random: o(n|ff)" |grep -o "on"' , $out , $ret);
+if ($ret !=0)
+{
+    $shuffle="active";
+}
 
+exec('mpc |grep -oE "consume: o(n|ff)" |grep -o " on"' , $out , $ret);
+if ($ret !=0)
+{
+    $repeat="active";
+}
 
 ?>
 <!doctype html>
@@ -84,7 +96,7 @@ switch ($_POST['action']){
     <div class="time">
         <?php system ( "mpc | grep -oE '[0-9]{1,2}:[0-9]{2}/[0-9]{1,2}:[0-9]{2}'" );  ?>
     </div>
-
+<div class="fullbar_time"> <div class="bar_time" style="width: <?php system (" mpc | grep -oE '[0-9]{1,3}%'"); ?> " > </div> </div>
     <div class="control">
         <div class="div-button">
             <form action="/mpd/" method="post" >
@@ -104,6 +116,18 @@ switch ($_POST['action']){
             <form action="/mpd/" method="post" >
                 <input class="hidden" name="action" type="text" value="next" />
                 <input class="button" type="submit" value=">>" />
+            </form>
+        </div>
+        <div class="div-button">
+            <form action="/mpd/" method="post" >
+                <input class="hidden" name="action" type="text" value="repeat" />
+                <input class="button <?php echo $repeat; ?>" type="submit" value="R" />
+            </form>
+        </div>
+        <div class="div-button">
+            <form action="/mpd/" method="post" >
+                <input class="hidden" name="action" type="text" value="shuffle" />
+                <input class="button <?php echo $shuffle; ?>" type="submit" value="S" />
             </form>
         </div>
     </div>

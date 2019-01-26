@@ -23,6 +23,13 @@
         </div>
 
         <div class="div-album">
+            <form action="/mpd/artist.php" method="post" >
+                <input class="hidden" name="action" type="text" value="artist" />
+                <input class="button" type="submit" value="Artist" />
+            </form>
+        </div>
+        
+        <div class="div-album">
             <form action="/mpd/album.php" method="post" >
                 <input class="hidden" name="action" type="text" value="album" />
                 <input class="button" type="submit" value="Album" />

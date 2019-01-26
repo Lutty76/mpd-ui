@@ -37,8 +37,8 @@
 foreach ($artist as $one){
 echo '
 <div class="button-artist">
-    <form action="/mpd/artist.php" method="post" >
-        <input class="hidden" name="action" type="text" value="'.$one.'" />
+    <form action="/mpd/album.php" method="post" >
+        <input class="hidden" name="artist" type="text" value="'.$one.'" />
         <input class="button" type="submit" value="'.$one.'" />
     </form>
 </div>
