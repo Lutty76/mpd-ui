@@ -7,13 +7,13 @@ html{
     width: 100%; 
 }
 .title{
-width : 73%;
+width : 68%;
      display: inline-block;  
      overflow: hidden;
      height: 52px;
 }
 .time{
-width : 24%;
+width : 29%;
     margin: auto;
      display: inline-block;  
     text-align:right;
@@ -28,7 +28,7 @@ margin: 25px 15px;
     
     color: #444 !important;
 }
-.div-artist, .div-album, .div-clear, .div-playlist{
+.div-artist, .div-album, .div-clear, .div-playlist, .div-reboot{
 
      display: inline-block;  
 margin: 25px 8px;
@@ -38,7 +38,7 @@ margin: 25px 8px;
 }
 .div-link .button{
     
-    font-size: 25px;
+    font-size: 23px;
 }
 .button, .top{
     background: #222;
@@ -66,8 +66,11 @@ margin-bottom:0px;
 }
 .button-song .button{
     margin: 10px;
-    font-size: 20px;
+    font-size: 16px;
     overflow: hidden;
+    display: block; 
+    height: 18px;
+    padding: 2px;
 }
 .div-genre{
 
@@ -89,4 +92,23 @@ display: block;
 .bar_time{
     background:  #BB2222;
     height:10px;
+}
+.list-setting .button{
+	font-size: 20px;
+
+}
+.list-setting div{
+ display: inline-block;
+margin: 0px 50px 10px 50px;
+}
+.info-setting{
+font-size: 14px;
+}
+.slot{
+font-size: 14px;
+
+
+}
+.div-save{
+	display: inline-block;
 }

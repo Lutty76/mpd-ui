@@ -26,14 +26,14 @@ else{
 <a id="top"></a>
 <div class="div-link">
         <div class="div-artist">
-            <form action="/mpd/artist.php" method="post" >
+            <form action="/artist.php" method="post" >
                 <input class="hidden" name="action" type="text" value="artist" />
                 <input class="button" type="submit" value="Artist" />
             </form>
         </div>
 
         <div class="div-album">
-            <form action="/mpd/" method="post" >
+            <form action="/" method="post" >
                 <input class="hidden" name="action" type="text" value="" />
                 <input class="button" type="submit" value="Play" />
             </form>
@@ -48,7 +48,7 @@ else{
 if (isset($_POST['artist'])){
 echo'
 <div class="button-artist">
-    <form action="/mpd/artist.php" method="post" >
+    <form action="/artist.php" method="post" >
         <input class="hidden" name="action" type="text" value="'.$_POST['artist'].'" />
         <input class="button" type="submit" value="Tous" />
     </form>
@@ -59,7 +59,7 @@ echo'
 foreach ($album as $one){
 echo '
 <div class="button-artist">
-    <form action="/mpd/album.php" method="post" >
+    <form action="/album.php" method="post" >
         <input class="hidden" name="action" type="text" value="'.$one.'" />
         <input class="button" type="submit" value="'.$one.'" />
     </form>

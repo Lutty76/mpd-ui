@@ -16,14 +16,14 @@
 <a id="top"></a>
 <div class="div-link">
         <div class="div-artist">
-            <form action="/mpd/" method="post" >
+            <form action="/" method="post" >
                 <input class="hidden" name="action" type="text" value="" />
                 <input class="button" type="submit" value="Play" />
             </form>
         </div>
 
         <div class="div-album">
-            <form action="/mpd/album.php" method="post" >
+            <form action="/album.php" method="post" >
                 <input class="hidden" name="action" type="text" value="album" />
                 <input class="button" type="submit" value="Album" />
             </form>
@@ -37,7 +37,7 @@
 foreach ($artist as $one){
 echo '
 <div class="button-artist">
-    <form action="/mpd/album.php" method="post" >
+    <form action="/album.php" method="post" >
         <input class="hidden" name="artist" type="text" value="'.$one.'" />
         <input class="button" type="submit" value="'.$one.'" />
     </form>
