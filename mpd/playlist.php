@@ -20,24 +20,25 @@
                 <input class="hidden" name="action" type="text" value="" />
                 <input class="button" type="submit" value="Play" />
             </form>
-        </div>
-
-        <div class="div-album">
+        </div><div class="div-album">
             <form action="/artist.php" method="post" >
                 <input class="hidden" name="action" type="text" value="artist" />
                 <input class="button" type="submit" value="Artist" />
             </form>
-        </div>
-        
-        <div class="div-album">
+        </div><div class="div-album">
             <form action="/album.php" method="post" >
                 <input class="hidden" name="action" type="text" value="album" />
                 <input class="button" type="submit" value="Album" />
             </form>
+        </div><div class="div-clear">
+            <form action="/setting.php" method="post" >
+                <input class="hidden" name="action" type="text" value="Settings" />
+                <input class="button" type="submit" value="Settings" />
+            </form>
         </div>
 
 </div>
-   
+
 <div class="list-artist">
 
 <?php
@@ -59,7 +60,7 @@ echo '
 if ($_GET['action']!= 'playlist'){
 
    
-                exec('mpc play '.$_POST['action'] , $out , $ret);
+                exec('mpc play '.$_GET['action'] , $out , $ret);
 echo "Played !";
 }
 

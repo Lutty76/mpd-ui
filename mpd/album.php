@@ -30,12 +30,20 @@ else{
                 <input class="hidden" name="action" type="text" value="artist" />
                 <input class="button" type="submit" value="Artist" />
             </form>
-        </div>
-
-        <div class="div-album">
+        </div><div class="div-album">
             <form action="/" method="post" >
                 <input class="hidden" name="action" type="text" value="" />
                 <input class="button" type="submit" value="Play" />
+            </form>
+        </div><div class="div-playlist">
+            <form action="/playlist.php" method="post" >
+                <input class="hidden" name="action" type="text" value="playlist" />
+                <input class="button" type="submit" value="Playlist" />
+            </form>
+        </div><div class="div-clear">
+            <form action="/setting.php" method="post" >
+                <input class="hidden" name="action" type="text" value="Settings" />
+                <input class="button" type="submit" value="Settings" />
             </form>
         </div>
 

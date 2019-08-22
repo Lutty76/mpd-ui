@@ -1,58 +1,125 @@
 html{
 	background-color: black;
-	color: #BB2222;
+	color: #FFF;
 	font-family: Helvetica;
 	font-weight: bold; 
     font-size: 22px;
     width: 100%; 
 }
-.title{
-width : 68%;
+body{
+	margin:0px;   
+}
+.info_music{
+	width : 68%;
      display: inline-block;  
-     overflow: hidden;
      height: 52px;
 }
+.info_music>div{
+	width : 100%;
+	display: inline-block;  
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 23px;
+}
 .time{
-width : 29%;
-    margin: auto;
-     display: inline-block;  
-    text-align:right;
-vertical-align: top;
+	width : 29%;
+	margin: auto;
+	display: inline-block;  
+	text-align:right;
+	vertical-align: top;
 }
-.div-button{
 
-     display: inline-block;  
-margin: 25px 15px;
-}
-.active{
-    
-    color: #444 !important;
-}
 .div-artist, .div-album, .div-clear, .div-playlist, .div-reboot{
 
-     display: inline-block;  
-margin: 25px 8px;
+	display: inline-block;  
+	margin: 0px 0px;
+	width:25%;
 }
+
 .div-link {
-        margin-top:-8px;
+	margin-top:0px;
+	margin-bottom:25px;
+	width:100%;
+}
+.div-link>div {
+	border-bottom : 1px solid grey;
+}
+.div-link>div:not(:first-child) {
+	border-left : 1px solid grey;
+	margin-left: -1px;
+}
+.div-link input{
+	width: 100%;	
 }
 .div-link .button{
     
     font-size: 23px;
 }
+.div-button{
+
+     display: inline-block;
+	 vertical-align: top;
+	 width: 20%;
+}
+.img_button{
+	color: rgba(0,0,0,0);
+	margin: 0px 0px;
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height:78px;
+	width:100%; 
+    background-color: #222;
+	border:none;
+    border-top: 1px solid grey;
+    border-bottom:  1px solid grey;
+}
+.s_active{
+    background-image: url("musicshuffle.png");
+}
+.s_inactive{
+    background-image: url("musicshuffle_off.png");
+}
+.r_active{
+    background-image: url("musicrepeat.png");
+    border-right:  1px solid grey;
+}
+.r_inactive{
+    background-image: url("musicrepeat_off.png");
+    border-right:  1px solid grey;
+}
+.control{
+	
+margin-top:30px;
+}
+.playbutton{
+
+    background: #222;
+    border: none;
+    border-top: 1px solid grey;
+    border-bottom:  1px solid grey;
+    border-right:  1px solid grey;
+	color: #FFF;
+    font-size: 55px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:100%;
+}
+
 .button, .top{
     background: #222;
     border: none;
-	color: #BB2222;
+	color: #FFF;
     font-size: 35px;
-margin-top:0px;
-margin-bottom:0px;
+	margin-top:0px;
+	margin-bottom:0px;
 }
 .top{
     text-decoration: none;
     font-size: 20px;
     float: right;
-	color: #BB2222;
+	color: #FFF;
     padding: 10px;
 }
 .button-artist {
@@ -72,10 +139,24 @@ margin-bottom:0px;
     height: 18px;
     padding: 2px;
 }
+.playlist{
+	position: absolute; bottom: 0;
+	width:100%;
+}
+.playlist>div {
+	border-top : 1px solid grey;
+}
+.playlist>div:not(:first-child) {
+	border-left : 1px solid grey;
+	margin-left: -1px;
+}
 .div-genre{
-
-     display: inline-block;  
-margin:5px;
+	display: inline-block;  
+	width:25%;
+	margin:0px;
+}
+.div-genre input{
+width: 100%;	
 }
 .control{
 display: block;
@@ -86,29 +167,29 @@ display: block;
 }
 .fullbar_time{
     margin-top: 10px;
-    border: 1px  solid  #BB2222;
+    border: 1px  solid  #FFF;
 }
-
 .bar_time{
-    background:  #BB2222;
+    background:  #FFF;
     height:10px;
 }
 .list-setting .button{
 	font-size: 20px;
-
 }
 .list-setting div{
- display: inline-block;
-margin: 0px 50px 10px 50px;
+	display: inline-block;
+	margin: -5px 50px 15px 50px;
 }
 .info-setting{
-font-size: 14px;
+	font-size: 14px;
 }
 .slot{
-font-size: 14px;
-
-
+	font-size: 14px;
 }
 .div-save{
 	display: inline-block;
+}
+.float-right{
+	float: right;
+	margin-top: -15px;
 }
