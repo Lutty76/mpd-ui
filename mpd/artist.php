@@ -20,22 +20,17 @@
                 <input class="hidden" name="action" type="text" value="" />
                 <input class="button" type="submit" value="Play" />
             </form>
-        </div>
-
-        <div class="div-album">
+        </div><div class="div-album">
             <form action="/album.php" method="post" >
                 <input class="hidden" name="action" type="text" value="album" />
                 <input class="button" type="submit" value="Album" />
             </form>
-        </div>
-        <div class="div-playlist">
+        </div><div class="div-playlist">
             <form action="/playlist.php" method="post" >
                 <input class="hidden" name="action" type="text" value="playlist" />
                 <input class="button" type="submit" value="Playlist" />
             </form>
-        </div>
-
-        <div class="div-clear">
+        </div><div class="div-clear">
             <form action="/setting.php" method="post" >
                 <input class="hidden" name="action" type="text" value="Settings" />
                 <input class="button" type="submit" value="Settings" />
@@ -49,15 +44,12 @@
 
 <?php
 foreach ($artist as $one){
-echo '
-<div class="button-artist">
+echo '<div class="button-artist">
     <form action="/album.php" method="post" >
         <input class="hidden" name="artist" type="text" value="'.$one.'" />
         <input class="button" type="submit" value="'.$one.'" />
     </form>
-</div>
-
-';
+</div>';
 }
 
 
@@ -69,10 +61,10 @@ echo '
 <?php
 if ($_POST['action']!= 'artist'){
 
-    
-       exec('mpc findadd artist \''.$_POST['action'].'\'' , $out , $ret);  
-                exec('mpc play' , $out , $ret);
-echo "Added !";
+        exec('mpc findadd artist \''.$_POST['action'].'\'' , $out , $ret);  
+        exec('mpc repeat off' , $out , $ret);
+        exec('mpc play' , $out , $ret);
+	echo "Added !";
 }
 
 

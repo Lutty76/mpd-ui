@@ -37,7 +37,7 @@ break;
 <head>
   <meta charset="utf-8">
   <title>Lutty Player</title>
-  <script src="script.js"></script>
+  <script src="script-setting.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -80,6 +80,7 @@ break;
            <input class="button" type="submit" value="Reboot" />
        </form>
     </div>
+
 
 <span class="slot"> Playlist 1 :</span>
 <div class="div-save">

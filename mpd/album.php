@@ -9,7 +9,7 @@ if (isset($_POST['artist'])){
 else{
 
 
- exec ('mpc -f %album%  search track 10 |sort -u', $album,$code);
+ exec ('mpc -f %album%  search track 5 |sort -u', $album,$code);
 }
     
 
@@ -65,15 +65,12 @@ echo'
 
 }
 foreach ($album as $one){
-echo '
-<div class="button-artist">
+echo '<div class="button-artist">
     <form action="/album.php" method="post" >
         <input class="hidden" name="action" type="text" value="'.$one.'" />
         <input class="button" type="submit" value="'.$one.'" />
     </form>
-</div>
-
-';
+</div>';
 }
 
 
@@ -87,6 +84,7 @@ if (isset($_POST['action']) && $_POST['action']!= 'album'){
 
     
        exec('mpc findadd album \''.$_POST['action'].'\'' , $out , $ret);  
+                        exec('mpc repeat off' , $out , $ret);
                 exec('mpc play' , $out , $ret);
 
 
